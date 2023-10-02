@@ -1,0 +1,25 @@
+﻿@page
+@model IshimweHealthcare.Pages.Account.SignupModel
+@{
+}
+<br />
+<h2>Welcome to ClementHealthCare</h2>
+
+<div class="container">
+	<h2>Signup Form</h2>
+	<form method="POST">
+		<div class="form-group">
+			<label for="username">Username:</label>
+			<input type="text" class="form-control" id="username" placeholder="Enter username" name="UserName" value="@Model.usersInfo.Username" required>
+		</div>
+		<div class="form-group">
+			<label for="password">Password:</label>
+			<input type="password" class="form-control" id="password" placeholder="Enter password" name="Password" value="@Model.usersInfo.Password" required>
+		</div>
+		<div class="form-group">
+			<label for="password">Confirm Password:</label>
+			<input type="password" class="form-control" id="password" placeholder="ReEnter password" name="confirmpassword" value="@Model.usersInfo.confirmPassword" required>
+		</div><br />
+		<button type="submit" class="btn btn-primary">Signup</button>
+	</form>
+</div>

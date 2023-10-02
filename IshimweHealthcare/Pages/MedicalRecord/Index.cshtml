@@ -1,0 +1,37 @@
+﻿@page
+@model IshimweHealthcare.Pages.MedicalRecord.IndexModel
+@{
+}
+<br />
+<h2>List of Medical_Record</h2>
+<a class='btn btn-primary btn-sm' href='/MedicalRecord/Create'>New Medical_Records</a>
+<a class='btn btn-primary btn-sm' href='/Admin/Index'>Home</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>MedicalHistoryID</th>
+            <th>patient_Id</th>
+            <th>Treatment</th>
+            <th>Diagnosis</th>
+            <!--<th>Record_Date</th>-->
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.listRecords) 
+        {
+            <tr>
+                <td>@item.UUID</td>
+                <td>@item.patientid</td>
+                <td>@item.doctorname</td>
+                <td>@item.description</td>
+                <td>
+                    <a class="btn btn-primary btn-sm" href="/MedicalRecord/Edit?id=@item.UUID">Edit</a>
+                    <a class="btn btn-danger btn-sm" href="/MedicalRecord/Delete?id=@item.UUID">Delete</a>
+
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>
